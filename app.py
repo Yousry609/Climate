@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.metrics import pairwise_distances
 
 # Load the saved data and cluster centers
-cluster_centers = joblib.load('agglomerative_model.pkl')  # Replace with your precomputed cluster centers
+cluster_centers = joblib.load('cluster_centers.pkl')  # Replace with your precomputed cluster centers
 
 # Debugging cluster centers
 st.write(f"Raw Cluster Centers: {cluster_centers}")
