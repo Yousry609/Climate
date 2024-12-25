@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.metrics import pairwise_distances
 
 # Load the saved data and cluster centers
-cluster_centers = joblib.load('cluster_centers.pkl')  # Replace with your precomputed cluster centers
+cluster_centers = joblib.load('agglomerative_model.pkl')  # Replace with your precomputed cluster centers
 cluster_centers = np.array(cluster_centers, dtype=float)  # Ensure it's a NumPy array
 
 # Streamlit App Title
