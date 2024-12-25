@@ -37,9 +37,6 @@ if st.button('Predict Cluster'):
     # Ensure input_data is converted to NumPy array and matches dtype
     input_data = np.array(input_data, dtype=float)
 
-    # Debugging output for dimensions and types
-    st.write(f"Input data shape: {input_data.shape}")
-    st.write(f"Cluster centers shape: {cluster_centers.shape}")
 
     # Calculate distances to cluster centers
     distances = pairwise_distances(input_data, cluster_centers)
