@@ -5,7 +5,8 @@ import numpy as np
 from sklearn.metrics import pairwise_distances
 
 # Load the saved data and cluster centers
-cluster_centers = joblib.load('agglomerative_model.pkl')  # Replace with your precomputed cluster centers
+cluster_centers = joblib.load('cluster_centers.pkl')  # Replace with your precomputed cluster centers
+cluster_centers = np.array(cluster_centers, dtype=float)  # Ensure it's a NumPy array
 
 # Streamlit App Title
 st.title("Clustering Prediction App")
@@ -26,6 +27,13 @@ if st.button('Predict Cluster'):
                                 relative_humidity, rain, wind]],
                               columns=['Actual Brightness', 'Normal Temperature',
                                        'Relative Humidity', 'Rain', 'Wind'])
+
+    # Ensure input_data is converted to NumPy array and matches dtype
+    input_data = np.array(input_data, dtype=float)
+
+    # Debugging output for dimensions and types
+    st.write(f"Input data shape: {input_data.shape}")
+    st.write(f"Cluster centers shape: {cluster_centers.shape}")
 
     # Calculate distances to cluster centers
     distances = pairwise_distances(input_data, cluster_centers)
