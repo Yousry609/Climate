@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import numpy as np
-from sklearn.preprocessing import StandardScaler
+
 
 # Load the saved model
 model = joblib.load('agglomerative_model.pkl')
